@@ -15,3 +15,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+paypal:
+  client-id: ${PAYPAL_CLIENT_ID}
+  client-secret: ${PAYPAL_CLIENT_SECRET}
+  base-url: ${PAYPAL_BASE_URL:https://api-m.sandbox.paypal.com}
