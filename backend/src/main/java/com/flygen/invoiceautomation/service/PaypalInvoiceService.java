@@ -43,18 +43,6 @@ public class PaypalInvoiceService {
                 .block();
     }
 
-    public PaypalInvoiceSearchResponse fetchInvoicesWithoutDateFilter() {
-        String accessToken = paypalAuthService.getAccessToken();
-
-        return webClient.get()
-                .uri("/v2/invoicing/invoices?page=1&page_size=100&total_required=true")
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
-                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
-                .retrieve()
-                .bodyToMono(PaypalInvoiceSearchResponse.class)
-                .block();
-    }
-
     public String fetchInvoicesRaw(LocalDate fromDate, LocalDate toDate) {
         String accessToken = paypalAuthService.getAccessToken();
 

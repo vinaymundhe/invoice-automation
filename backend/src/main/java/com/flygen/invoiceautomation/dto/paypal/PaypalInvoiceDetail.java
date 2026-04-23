@@ -6,18 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PaypalInvoiceDetail {
 
-    private String status;
-
     @JsonProperty("invoice_number")
     private String invoiceNumber;
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    @JsonProperty("invoice_date")
+    private String invoiceDate;
 
     public String getInvoiceNumber() {
         return invoiceNumber;
@@ -25,5 +18,13 @@ public class PaypalInvoiceDetail {
 
     public void setInvoiceNumber(String invoiceNumber) {
         this.invoiceNumber = invoiceNumber;
+    }
+
+    public String getInvoiceDate() {
+        return invoiceDate;
+    }
+
+    public void setInvoiceDate(String invoiceDate) {
+        this.invoiceDate = invoiceDate;
     }
 }
